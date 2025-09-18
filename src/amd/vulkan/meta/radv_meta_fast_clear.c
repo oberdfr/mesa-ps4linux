@@ -326,7 +326,7 @@ radv_process_color_image(struct radv_cmd_buffer *cmd_buffer, struct radv_image *
 
    switch (op) {
    case FAST_CLEAR_ELIMINATE:
-      pred_offset = image->fce_pred_offset;
+      pred_offset = 0;
       break;
    case FMASK_DECOMPRESS:
       pred_offset = 0; /* FMASK_DECOMPRESS is never predicated. */

@@ -19,6 +19,8 @@ const char *ac_get_family_name(enum radeon_family family)
    CASE(OLAND);
    CASE(HAINAN);
    CASE(BONAIRE);
+   CASE(LIVERPOOL);
+   CASE(GLADIUS);
    CASE(KABINI);
    CASE(KAVERI);
    CASE(HAWAII);
@@ -86,6 +88,10 @@ enum amd_gfx_level ac_get_gfx_level(enum radeon_family family)
       return GFX8;
    if (family >= CHIP_BONAIRE)
       return GFX7;
+   if (family >= CHIP_LIVERPOOL)
+      return GFX7;
+   if (family >= CHIP_GLADIUS)
+      return GFX7;
 
    return GFX6;
 }
@@ -104,6 +110,10 @@ const char *ac_get_llvm_processor_name(enum radeon_family family)
    case CHIP_HAINAN:
       return "hainan";
    case CHIP_BONAIRE:
+      return "bonaire";
+   case CHIP_LIVERPOOL:
+      return "bonaire";
+   case CHIP_GLADIUS:
       return "bonaire";
    case CHIP_KABINI:
       return "kabini";
